@@ -15,11 +15,6 @@ const schema = buildSchema(`
         authorName: String
     }
     
-    input AuthorInput {
-        id: ID
-        authorName: String
-        books: [BookInput]
-    }
     input BookInput {
         id: ID
         bookName: String!
@@ -28,13 +23,10 @@ const schema = buildSchema(`
     }
     
     type Query {
-        getAllAuthors: [Author]
-        getAuthor(id: ID): Author
         getAllBooks: [Book]
         getBook(id: ID): Book
     }
     type Mutation {
-        createAuthor(input: AuthorInput): Author
         createBook(input: BookInput): Book
     }
 
